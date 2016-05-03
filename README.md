@@ -10,11 +10,18 @@ tinymce.init({
   external_plugins: {
     twAceEditor: "[[++assets_url]]components/tinymcewrapper/tinymceplugins/twAceEditor.js", //plugin location
   },
-  twtwAceEditorPoppedOrInline: 1, //1 for popped (default), 0 for inline
-  twtwAceEditorEMMETsrcURL: "", // emmet version must be for twAceEditor
-  twAceEditorSettings: { // pass in any twAceEditor official setting you like to overwrite default behaviour
-    ...
-   },
+  twAceEditorSettings: { // pass in any Ace official setting you like to overwrite default behaviour
+    twAceEditorCDNbase: "",
+    twPoppedTitle: "",
+    twPopped: 0, // popped (default) or inline
+    twPoppedWidth: "",
+    twPoppedHeight: "",
+    twEmmetUrl: "", // emmet.js version must be for Ace
+    twViewInlineButtonText: "View Inline",
+    twCloseButtonText: "Close",
+    twInlineWidth: "auto",
+    twInlineHeight: 250
+  },
   toolbar: "code",
   contextmenu: "code"
 });

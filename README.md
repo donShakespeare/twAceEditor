@@ -19,6 +19,7 @@ tinymce.init({
     twEmmetUrl: "", // emmet.js version must be for Ace
     twViewInlineButtonText: "View Inline",
     twCloseButtonText: "Close",
+    twLoadCSS: 0, //default 1
     twInlineWidth: "auto",
     twInlineHeight: 250
   },

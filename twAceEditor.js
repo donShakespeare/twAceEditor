@@ -22,6 +22,7 @@
       twEmmetUrl: "", // emmet.js version must be for Ace
       twViewInlineButtonText: "View Inline",
       twCloseButtonText: "Close",
+      twLoadCSS: 0, //default 1
       twInlineWidth: "auto",
       twInlineHeight: 250
     },
@@ -179,7 +180,7 @@ tinymce.PluginManager.add('twAceEditor', function(editor) {
 
   function loadAllace(style) {
     var mainCss = '<style id="mainCSSAceEditor">.x-window-body{overflow-x:hidden!important;}.codeT,.coder{position:relative}.codeT{width:100%;resize:vertical;color:#000;min-height:300px;margin:0 auto}.mce-popCode .mce-title{text-align:center;} .mce-popCode .mce-close-button{display:none;}.ace_editor{text-align:left!important}.mce-popCode .ace_editor{height:inherit;width:99.5%!important;}.coder .ace_editor{height:inherit;width:inherit;}.mce-popAceEditor,.mce-popAceEditor .mce-container-body{width:inherit!important}.coder > .mce-close-button{position:absolute;top:-18px;right:0;cursor: pointer;background: #FFF;margin: 0 19px -4px 0;text-align: center;border-radius: 5px 5px 0 0;padding: 2px;box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.4);}.coder .ace_editor{box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.4)}.mce-popCode .ace_editor{box-shadow:none;}.coder > .mce-close-button > .mce-ico{font-size:15px; color:#000;}</style>';
-    if(!$("#mainCSSAceEditor").length){
+    if(!$("#mainCSSAceEditor").length && editor.getParam("twAceEditorSettings",{}).twLoadCSS !== 0){
       $('head').append(mainCss);
     }
     if (typeof ace == 'undefined') {
